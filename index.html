@@ -661,6 +661,18 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
         }
+
+        .hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
     </style>
 </head>
 <body>
@@ -933,7 +945,13 @@
                     </div>
                 </div>
                   <h2 class="section-title">Ou me mande uma mensagem</h2>
-                <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                <form name="contact" class="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden">
+                        <label>
+                        Don’t fill this out if you’re human: <input name="bot-field" />
+                        </label>
+                    </p>
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" id="name" name="name" required>
