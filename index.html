@@ -674,7 +674,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 1rem;
             background: rgba(255, 255, 255, 0.05);
@@ -686,10 +687,15 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .form-group select option {
+            background: var(--dark-bg);
         }
 
         .form-group textarea {
@@ -719,6 +725,12 @@
         .form-submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        #form-feedback {
+            margin-top: 1rem;
+            font-weight: 500;
+            text-align: center;
         }
 
         .hidden {
@@ -890,27 +902,31 @@
             
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <h3 class="project-title">
-                                <i class="fas fa-mobile-alt"></i>
+                    <div class="project-header" >
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 class="project-title">
+                          <i class="fas fa-mobile-alt"></i>
                                 WordList
                             </h3>
-                            <span class="project-status">Em andamento</span>
+                            <span class="project-status">Concluido</span>
                         </div>
                         <p class="project-description">
                             App mobile para auxiliar na aprendizagem de inglês. Permite aos usuários explorar palavras com fonética, áudio e significados, 
                             incluindo sistema de favoritos e histórico para acompanhar o progresso de aprendizagem.
                         </p>
-                    </div>
-                    <div class="project-tech">
+                      </div>
+                      <div class="project-tech">
                         <span class="tech-tag">React Native</span>
                         <span class="tech-tag">Expo</span>
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Firebase</span>
                         <span class="tech-tag">Expo Router</span>
+                        <a href="https://github.com/Matheusfbio/WordList" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 1rem; margin-left: auto;">
+                            <i class="fab fa-github"></i>
+                            Ver no GitHub
+                        </a>
+                      </div>
                     </div>
-                </div>
                 
                 <div class="project-card">
                     <div class="project-header">
@@ -930,8 +946,63 @@
                         <span class="tech-tag">React Native</span>
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Async Storage</span>
-                        <span class="tech-tag">PDF Export</span>
-                        <span class="tech-tag">CSV Export</span>
+                        <span class="tech-tag">PDF & CSV Export</span>
+                        <a href="https://github.com/Matheusfbio/manifest" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 2.5rem; margin-left: auto;">
+                            <i class="fab fa-github"></i>
+                            Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 class="project-title">
+                                <i class="fas fa-tasks"></i>
+                                TaskApp-kt
+                            </h3>
+                            <span class="project-status">Concluído</span>
+                        </div>
+                        <p class="project-description">
+                            TaskApp-kt é um aplicativo simples de gerenciamento de tarefas desenvolvido em Kotlin. Ele oferece uma interface intuitiva para adicionar, visualizar, editar e excluir tarefas, proporcionando uma maneira eficiente de organizar suas atividades diárias.
+                        </p>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Android Studio</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">XML</span>
+                        <span class="tech-tag">DataBinding</span>
+                        <a href="https://github.com/Matheusfbio/TaskApp-kt" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 1rem; margin-left: auto;">
+                            <i class="fab fa-github"></i>
+                            Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 class="project-title">
+                                <i class="fas fa-wallet"></i>
+                                Bolso Digital
+                            </h3>
+                            <span class="project-status">Em produção</span>
+                        </div>
+                        <p class="project-description">
+                            Aplicação web para ajudar no controle financeiro pessoal, com funcionalidades para gerenciamento de despesas, receitas, orçamentos e metas.
+                        </p>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">TailwindCSS</span>
+                        <span class="tech-tag">Frame Motion</span>
+                        <span class="tech-tag">Supabase</span>
+                        <a href="https://help-finance.netlify.app/" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 1rem; margin-left: auto;">
+                            <i class="fas fa-globe"></i>
+                            Ver Online
+                        </a>
                     </div>
                 </div>
             </div>
@@ -946,38 +1017,110 @@
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3 class="job-title">Desenvolvedor Full Stack Web</h3>
+                    <h3 class="job-title">Desenvolvedor full stack</h3>
                     <div class="company">
-                        <span><i class="fas fa-building"></i> 101 Soluções</span>
-                        <span class="period">fev 2024 - ago 2024</span>
+                        <span><i class="fas fa-building"></i> self-employed</span>
+                        <span class="period">dezembro de 2024 - maio de 2025 (6 meses)</span>
                     </div>
-                    <p>Desenvolvi solução web completa para clínica oftalmológica utilizando React.js e FastAPI. 
-                    Implementei componentização, testes unitários e de integração, resultando em significativo aumento 
-                    da eficiência operacional e redução no tempo de resposta do sistema.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Full Stack Developer</h3>
+                    <div class="company">
+                        <span><i class="fas fa-building"></i> 101 Soluções em Tecnologia</span>
+                        <span class="period">janeiro de 2024 - junho de 2024 (6 meses)</span>
+                    </div>
+                    <p>Desenvolvimento de um sistema web para consultas de oftalmologia e atendimento ao paciente, garantindo compatibilidade entre navegadores e segurança no acesso aos dados dos pacientes. Responsável pelo desenvolvimento front-end e back-end, garantindo a integração eficiente entre a interface, a API e o banco de dados, otimizando a funcionalidade de busca e a segurança dos dados.</p>
                     <div class="project-tech" style="margin-top: 1rem;">
                         <span class="tech-tag">React.js</span>
                         <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">JavaScript</span>
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
                         <span class="tech-tag">Git</span>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
-                    <h3 class="job-title">Desenvolvedor Web e Mobile</h3>
+                    <h3 class="job-title">Frontend Mobile Developer</h3>
                     <div class="company">
-                        <span><i class="fas fa-building"></i> 101 Soluções</span>
-                        <span class="period">abr 2022 - dez 2024</span>
+                        <span><i class="fas fa-building"></i> 101 Soluções em Tecnologia</span>
+                        <span class="period">abril de 2022 - dezembro de 2023 (1 ano 9 meses)</span>
                     </div>
-                    <p>Responsável pelo desenvolvimento de aplicação multiplataforma para Web, Android e iOS. 
-                    Utilizei React.js e React Native garantindo experiência fluida e integrada. Implementei 
-                    Styled Components e CMS para otimização da produtividade.</p>
+                    <p>Desenvolvimento de uma plataforma móvel para acompanhamento de partidas de futebol, permitindo aos usuários acompanhar informações em tempo real, gerenciar conteúdo e realizar operações seguras dentro do aplicativo. Liderou o design e implementação da interface do usuário, autenticação, autorização e sistemas de gerenciamento de conteúdo.</p>
+                    <div class="project-tech" style="margin-top: 1rem;">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Styled-Components</span>
+                        <span class="tech-tag">Firebase (GCP)</span>
+                        <span class="tech-tag">Auth0</span>
+                        <span class="tech-tag">CMS com React.js</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Scrum</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Full Stack Developer</h3>
+                    <div class="company">
+                        <span><i class="fas fa-building"></i> 7EN Company</span>
+                        <span class="period">fevereiro de 2023 - janeiro de 2024 (1 ano)</span>
+                    </div>
+                    <p>O projeto envolve o desenvolvimento de uma plataforma de aprendizado online voltada para desenvolvedores iniciantes. A plataforma foi projetada para garantir a compatibilidade entre navegadores, proporcionando uma experiência acessível e responsiva para os usuários. As responsabilidades incluem a criação de interfaces intuitivas, o consumo de APIs e o gerenciamento da persistência de dados usando tecnologias como React.js, TypeScript, PostgreSQL e Nest.js.</p>
                     <div class="project-tech" style="margin-top: 1rem;">
                         <span class="tech-tag">React.js</span>
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Styled Components</span>
-                        <span class="tech-tag">GCP</span>
-                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Nest.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Scrum</span>
+                        <span class="tech-tag">Jest</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Full Stack Developer</h3>
+                    <div class="company">
+                        <span><i class="fas fa-building"></i> Autónomo</span>
+                        <span class="period">fevereiro de 2022 - julho de 2022 (6 meses)</span>
+                    </div>
+                    <p>Desenvolvimento de um sistema para um supermercado local com o objetivo de melhorar a gestão de vendas e o controle de estoque.</p>
+                    <div class="project-tech" style="margin-top: 1rem;">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Java 11</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Extensionista Unity fabrica de software</h3>
+                    <div class="company">
+                        <span><i class="fas fa-building"></i> Unipê - Centro Universitário de João Pessoa</span>
+                        <span class="period">agosto de 2019 - julho de 2020 (1 ano)</span>
+                    </div>
+                    <p>- Desenvolvimento de jogos 2D utilizando C# e a Unity Engine.<br>- Desenvolver e planejar ações e mecânicas dos personagens.<br>- Criação de lógica dos personagens usando módulos internos da Unity.<br>- Realização de testes para análises profundas para corrigir, identificar problemas, bugs e erros.<br>- Uso de sistemas de controle de versionamento de código (Git) para o gerenciamento do código e gestão de código.</p>
+                    <div class="project-tech" style="margin-top: 1rem;">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Scrum</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Desenvolvedor de banco de dados</h3>
+                    <div class="company">
+                        <span><i class="fas fa-building"></i> Unipê - Centro Universitário de João Pessoa</span>
+                        <span class="period">setembro de 2019 - novembro de 2019 (3 meses)</span>
                     </div>
                 </div>
             </div>
@@ -1033,9 +1176,20 @@
                         <label for="message">Mensagem</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Selecione um assunto</option>
+                            <option value="orcamento">Orçamento</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
                     <button type="submit" class="form-submit-btn">
                         <i class="fas fa-paper-plane"></i> Enviar Mensagem
                     </button>
+                    <div id="form-feedback"></div>
                 </form>
             </div>
         </div>
@@ -1065,6 +1219,45 @@
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
+            }
+        });
+
+        const form = document.querySelector('.contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.form-submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    formFeedback.textContent = 'Mensagem enviada com sucesso!';
+                    formFeedback.style.color = 'var(--accent-color)';
+                } else {
+                    throw new Error('Ocorreu um erro ao enviar a mensagem.');
+                }
+            } catch (error) {
+                formFeedback.textContent = error.message;
+                formFeedback.style.color = '#f44336'; // A red color for errors
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                setTimeout(() => {
+                    formFeedback.textContent = '';
+                }, 5000);
             }
         });
     </script>
