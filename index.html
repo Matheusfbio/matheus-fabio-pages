@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matheus Fábio - Desenvolvedor Full Stack</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script>
+    <!-- <script>
       (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="r51sgoK2EaC7UnZga_G4a";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
+    </script> -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -27,6 +27,13 @@
             --text-light: #e2e8f0;
             --text-gray: #94a3b8;
             --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+
+        [data-theme="light"] {
+            --dark-bg: #ffffff;
+            --darker-bg: #f8fafc;
+            --text-light: #1e293b;
+            --text-gray: #64748b;
         }
 
         body {
@@ -108,6 +115,45 @@
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .theme-toggle:hover::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .hamburger {
@@ -590,6 +636,10 @@
                 display: block;
             }
 
+            .theme-toggle {
+                font-size: 1rem;
+            }
+
             .hamburger.active .line:nth-child(1) {
                 transform: rotate(-45deg) translate(-5px, 6px);
             }
@@ -755,10 +805,12 @@
         <div class="container">
             <div class="nav-content">
                 <a href="#" class="logo">Olá e Bem vindo!</a>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                <div class="nav-right">
+                    <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
@@ -766,6 +818,11 @@
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#experience">Experiência</a></li>
                     <li><a href="#contact">Contato</a></li>
+                    <li>
+                      <button class="theme-toggle" id="themeToggle" title="Alternar tema">
+                          <i class="fas fa-moon" id="themeIcon"></i>
+                      </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -1252,6 +1309,37 @@
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
+            }
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', currentTheme);
+        
+        // Update icon based on current theme
+        if (currentTheme === 'light') {
+            themeIcon.className = 'fas fa-sun';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update icon
+            if (newTheme === 'light') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
             }
         });
 
